@@ -2,11 +2,19 @@ const Todo = require('../models/Todo')
 
 module.exports = {
     getTodos: async (req,res)=>{
+
+        // Logs the user information from the request object (req.user) to the console.
         console.log(req.user)
+
+        // The try-catch block, attempts to find todo items associated with the authenticated user's ID using the Todo model, and stores the result in the 'todoItems' variable. It also counts the number of uncompleted todo items for the same user and stores it in the 'itemsLeft' variable.
         try{
             const todoItems = await Todo.find({userId:req.user.id})
             const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
+
+            // Renders an EJS template named 'todos.ejs' with data containing the retrieved todo items, the count of uncompleted items, and user information.
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+
+        // If any errors occur during this process, they are logged to the console.
         }catch(err){
             console.log(err)
         }
