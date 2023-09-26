@@ -1,10 +1,88 @@
-h1{
-    color: red;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-.completed{
+
+body {
+    padding: 10px;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 100px;
+    font-size: 4rem;
+}
+
+h2 {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.completed{ 
     text-decoration: line-through;
     color: gray;
 }
-.not{
+
+li {
+    /* font-size: 1.5rem; */
+}
+
+.todo-item-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.not {
     text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.del {
+    padding: 8px 10px;
+    background: rgb(207, 6, 6);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.todo-form {
+    margin-bottom: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.todo-input {
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.submit-btn {
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: black;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-btn {
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    text-align: center;
 }
