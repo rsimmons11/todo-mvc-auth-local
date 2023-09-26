@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MVC Todo:Todo's</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
+    <a  class="logout-btn" href="/logout">Logout</a>
+
+    <h1>Todo list</h1>
 
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
+    <form class="todo-form" action="/todos/createTodo" method='POST'>
+        <input class="todo-input" type="text" placeholder="Enter a Todo Item" name='todoItem'>
+        <input class="submit-btn" type="submit">
     </form>
 
-    <a href="/logout">Logout</a>
-
+    <section class="todo-item-container">
+        <ul >
+            <% todos.forEach( el => { %>
+                    <li class='todoItem' data-id='<%=el._id%>'>
+                        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                        <span class='del'> Delete </span>
+                    </li>
+            <% }) %>    
+        </ul>
+    </section>
     <script src="js/main.js"></script>
 </body>
 </html>
