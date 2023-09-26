@@ -21,21 +21,27 @@ h2 {
     text-align: center;
 }
 
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-flow: wrap;
+}
+
+
 .completed{ 
     text-decoration: line-through;
     color: gray;
+    font-size: 1.5rem;
 }
 
-li {
-    /* font-size: 1.5rem; */
-}
 
 .todo-item-container {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    gap: 20px;
 }
 
 .not {
@@ -52,6 +58,7 @@ li {
     color: white;
     border-radius: 8px;
     cursor: pointer;
+
 }
 
 .todo-form {
@@ -64,8 +71,11 @@ li {
 }
 
 .todo-input {
-    padding: 8px 10px;
+    padding: 4px 10px;
     border-radius: 8px;
+    width: 334px;
+    font-size: 1.4rem;
+
 }
 
 .submit-btn {
