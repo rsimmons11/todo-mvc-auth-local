@@ -1,17 +1,28 @@
-const express = require('express')
-const router = express.Router()
-const todosController = require('../controllers/todos') 
-const { ensureAuth } = require('../middleware/auth')
+// Import the Express library
+const express = require('express');
 
-// This code sets up a route handler for a GET request to the root URL ("/"), using the Express.js router. It ensures that the user is authenticated (likely through middleware) before calling the getTodos function (method) from the todosController module (controller) to handle the request.
-router.get('/', ensureAuth, todosController.getTodos)
+// Create an instance of the Express router
+const router = express.Router();
 
-router.post('/createTodo', todosController.createTodo)
+// Import the todosController and ensureAuth middleware
+const todosController = require('../controllers/todos');
+const { ensureAuth } = require('../middleware/auth');
 
-router.put('/markComplete', todosController.markComplete)
+// Route handler for a GET request to the root URL ("/")
+// It ensures user authentication before calling the getTodos function from the todosController module
+router.get('/', ensureAuth, todosController.getTodos);
 
-router.put('/markIncomplete', todosController.markIncomplete)
+// Route handler for a POST request to create a new todo
+router.post('/createTodo', todosController.createTodo);
 
-router.delete('/deleteTodo', todosController.deleteTodo)
+// Route handler for a PUT request to mark a todo as complete
+router.put('/markComplete', todosController.markComplete);
 
-module.exports = router
+// Route handler for a PUT request to mark a todo as incomplete
+router.put('/markIncomplete', todosController.markIncomplete);
+
+// Route handler for a DELETE request to delete a todo
+router.delete('/deleteTodo', todosController.deleteTodo);
+
+// Export the router to be used in other parts of the application
+module.exports = router;

@@ -1,98 +1,101 @@
-* {
-    padding: 0;
+/* Reset some default styles for better consistency */
+body, h1, h2, ul, li {
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
 }
 
 body {
-    padding: 10px;
-}
-
-h1{
-    color: black;
-    text-align: center;
-    text-decoration: underline;
-    margin-bottom: 100px;
-    font-size: 4rem;
-}
-
-h2 {
-    margin-top: 100px;
-    text-align: center;
-}
-
-
-li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    flex-flow: wrap;
-}
-
-
-.completed{ 
-    text-decoration: line-through;
-    color: gray;
-    font-size: 1.5rem;
-}
-
-
-.todo-item-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
-}
-
-.not {
-    text-decoration: underline;
-    color: blue;
-    cursor: pointer;
-    margin-right: 10px;
-    font-size: 1.5rem;
-}
-
-.del {
-    padding: 8px 10px;
-    background: rgb(207, 6, 6);
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-
-}
-
-.todo-form {
-    margin-bottom: 50px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
-}
-
-.todo-input {
-    padding: 4px 10px;
-    border-radius: 8px;
-    width: 334px;
-    font-size: 1.4rem;
-
-}
-
-.submit-btn {
-    border-radius: 8px;
-    padding: 8px 10px;
-    background: black;
-    color: white;
-    outline: none;
-    border: none;
-    cursor: pointer;
+    justify-content: flex-start;
+    height: 100vh;
 }
 
 .logout-btn {
-    padding: 8px 10px;
-    border-radius: 8px;
-    background: black;
-    color: white;
-    cursor: pointer;
-    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #d9534f;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
 }
+
+h1 {
+    font-size: 6em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.todo-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.todo-input {
+    width: 500px;
+    padding: 10px;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.submit-btn {
+    padding: 10px 15px;
+    background-color: #5bc0de;
+    color: #fff;
+    border: 1px solid #46b8da;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.todo-item-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    width: 600px;
+}
+
+.todoItem {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.not {
+    margin-right: 100px;
+}
+
+.del {
+    color: #d9534f;
+    cursor: pointer;
+}
+
+/* Add hover effect for delete button */
+.del:hover {
+    text-decoration: underline;
+}
+
+
